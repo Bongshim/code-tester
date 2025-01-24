@@ -5,7 +5,8 @@ require.config({
 });
 
 const testOutput = document.getElementById('test-output');
-const docPanel = document.getElementById('documentation-panel');
+const docPanel = document.getElementById('documentation-overlay');
+const docPanelContent = document.getElementById('documentation-panel');
 const toggleDocsBtn = document.getElementById('toggleDocs');
 
 const METHOD_DOCS = {
@@ -217,7 +218,7 @@ require(['vs/editor/editor.main'], function () {
 function createDocumentationPanel() {
   const header = document.createElement('h3');
   header.textContent = 'Available Test Methods';
-  docPanel.appendChild(header);
+  docPanelContent.appendChild(header);
 
   const methodList = document.createElement('ul');
   VALID_METHODS.forEach((method) => {
@@ -232,8 +233,15 @@ function createDocumentationPanel() {
     methodList.appendChild(item);
   });
 
-  docPanel.appendChild(methodList);
-  return docPanel;
+  docPanelContent.appendChild(methodList);
+  return docPanelContent;
 }
+
+docPanel.addEventListener('click', (event) => {
+  if (event.target === docPanel) {
+    docPanel.style.display =
+      docPanel.style.display === 'none' ? 'block' : 'none';
+  }
+});
 
 createDocumentationPanel();
