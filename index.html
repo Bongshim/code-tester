@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <script src="main.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.js"></script>
+    <title>Code Tester</title>
+  </head>
+  <body>
+    <h1 class="title">Code Tester</h1>
+
+    <div class="container">
+      <div class="editor-container">
+        <div id="code-editor"></div>
+        <div id="test-editor"></div>
+      </div>
+      <div id="test-output">// Output will appear here...</div>
+    </div>
+
+    <div id="documentation-panel" class="documentation-panel"></div>
+
+    <footer>
+      <button id="runBtn">Run Code (Ctrl+Enter)</button>
+      <button id="clearBtn">Clear Output</button>
+
+      <button id="toggleDocs">Toggle Documentation</button>
+    </footer>
+  </body>
+</html>
